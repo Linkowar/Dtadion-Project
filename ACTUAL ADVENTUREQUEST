@@ -1,0 +1,247 @@
+							@echo off
+							color 6f
+							title Adventure Quest 0.0.1 ALPHA
+							echo Welcome to Adventure Quest!
+							echo/
+							echo Made by Dtad and BRL, version 0.0.1 ALPHA
+							echo/
+							echo This is an ALPHA build. This means that they're most likley quite a few bugs! Less than 5 percent of the game has currently been added.
+							pause
+							goto :saveDetector
+
+							:saveDetector
+							if exist %USERPROFILE%/Desktop/savefile.exe (
+							 goto saveDetectorName
+							) else (
+							 goto name
+							)
+							:saveDetectorName
+							if exist %USERPROFILE%/Desktop/savename.exe (
+							set /P c=Save detected. Would you like to load it?[Y/N]
+							if /I "%c%" EQU "Y" goto :saveloader
+							if /T "%c%" EQU "N" goto :choice
+							goto :saveDetectorName
+							) else (
+							goto :noName
+							)
+							:saveloader
+							set /p save=<savefile.txt
+							set /p name=<savename.txt
+							goto :%save%
+							:name
+							set /P Player1= What is your name? 
+							goto :confirmName
+						
+							:confirmName
+							set /P c=Your name is %Player1%, is this correct?[Y/N] 
+							if /I "%c%" EQU "Y" goto :choice
+							if /I "%c%" EQU "N" goto :name
+							goto :confirmName
+
+							:choice
+							set savelevel=choice
+							@echo %savelevel% 1)adventurequest.txt
+							For /f "tokens*" %%i in (adventurequest.txt) do @echo %%i
+							set /P c=You find yourself in a sandy plains area. There is a rabbit. What would you like to do? [Search/Hunt/Specs]
+							if /I "%c%" EQU "Search" goto :Search1
+							if /I "%c%" EQU "Hunt" goto :Hunt1
+							if /I "%c%" EQU "Specs" goto :Specs1
+							goto :choice
+					
+							:Search1
+							set /P c=You find, by wandering, a city about 12 hours away, a cactus, and the rabbit [it followed you]. What now? [City/Hunt/Specs]
+							if /I "%c%" EQU "City" goto :City1
+							if /I "%c%" EQU "Hunt" goto :Hunt1
+							if /I "%c%" EQU "Specs" goto :Specs2
+							goto :Search1
+							
+							:City1
+							pause
+							set /p c=You arive in the city as planned. you find it has been inhabited by people. What would you like to do now? [Steal/Murder/Job/Specs]
+							if /I "%c%" EQU "Steal" goto :Steal1
+							if /I "%c%" EQU "Murder" goto :Murder1
+							if /I "%c%" EQU "Job" goto :Job1
+							if /I "%c%" EQU "Specs" goto :Specs3
+							goto :City1
+
+							:Hunt1
+							set /p c=You sneak up on the rabbit. You strike on it, dealing 10 damage. What now? [Dodge/Defend/Attack/Specs] %Player1% CP 100 
+							if /I "%c%" EQU "Defend" goto :Defensestance1
+							if /I "%c%" EQU "Dodge" goto :Dodge1
+							if /I "%c%" EQU "Attack" goto :Attack1
+							if /I "%c%" EQU "Specs" goto :Specs5
+							
+							:Specs1
+							@echo off
+							echo 		Rabbit: 100 CP
+							echo/
+							echo 		%Player1%: 100 CP
+							Pause
+							goto :choice
+							
+							:Specs2
+							@echo off
+							echo		"City" means you can leave for the city immeadiatly.
+							echo/
+							echo 		"Hunt" means you can hunt the rabbit.
+							echo/
+							echo 		%Player1%: 100 CP
+							echo/
+							Pause
+							goto :search1
+							
+					
+							:Specs3
+							@echo off
+							echo		"Steal" means you can raid someone's house.
+							echo/
+							echo 		"Job" means you can try to get a job here. You might not want ot though, because you don't know if you have any enemys here.
+							echo/
+							echo 		"Murder" means you can go up to a random person and murder them.
+							echo/
+							echo 		%Player1%: 100 CP
+							echo/
+							Pause
+							goto :City1
+							
+							
+							
+							:Specs4
+							@echo off
+							echo Rabbit: 100 CP
+							echo %Player1%: 100 CP
+							Pause
+							goto :Specs1
+							
+							
+							:Murder1
+							set /p c=You drag the nearest person into an allyway. You think he is drugged until...
+							pause
+							goto :survive1
+							:Survive1
+							set /p c=He does nothing. What would you like to do? [Pickpocket/Job/Specs]
+							
+							:Job1
+							set /p c=
+
+							:Steal1
+							set /p c=You break into a house. What would you like to do now? [Look/Specs]
+							@echo off
+							echo   ___________
+							echo  /           \
+							echo /             \
+							echo ._____________.
+							echo .             .
+							echo .             .
+							echo .             .
+							echo .             .
+							echo .             .
+							echo ---------------
+							pause
+							goto :
+							:Defensestance1
+							:Dodge1
+							:Attack1
+							:Specs5
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+endlocal
