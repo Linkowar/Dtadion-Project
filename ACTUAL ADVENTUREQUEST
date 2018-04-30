@@ -1,63 +1,62 @@
-							@echo off
-							color 6f
-							title Adventure Quest 0.0.1 ALPHA
-							echo Welcome to Adventure Quest!
-							echo/
-							echo Made by Dtad and BRL, version 0.0.1 ALPHA
-							echo/
-							echo This is an ALPHA build. This means that they're most likley quite a few bugs! Less than 5 percent of the game has currently been added.
-							pause
-							goto :saveDetector
+@echo off
+color 6f
+title Adventure Quest 0.0.1 ALPHA
+echo Welcome to Adventure Quest!
+echo/
+echo Made by Dtad and BRL, version 0.0.1 ALPHA
+echo/
+echo This is an ALPHA build. This means that they're most likley quite a few bugs! Less than 5 percent of the game has currently been added.
+pause
+goto :saveDetector
 
-							:saveDetector
-							if exist %USERPROFILE%/Desktop/savefile.exe (
-							 goto saveDetectorName
-							) else (
-							 goto name
-							)
-							:saveDetectorName
-							if exist %USERPROFILE%/Desktop/savename.exe (
-							set /P c=Save detected. Would you like to load it?[Y/N]
-							if /I "%c%" EQU "Y" goto :saveloader
-							if /T "%c%" EQU "N" goto :choice
-							goto :saveDetectorName
-							) else (
-							goto :noName
-							)
-							:saveloader
-							set /p save=<savefile.txt
-							set /p name=<savename.txt
-							goto :%save%
-							:name
-							set /P Player1= What is your name? 
-							goto :confirmName
-						
-							:confirmName
-							set /P c=Your name is %Player1%, is this correct?[Y/N] 
-							if /I "%c%" EQU "Y" goto :choice
-							if /I "%c%" EQU "N" goto :name
-							goto :confirmName
+:saveDetector
+if exist %USERPROFILE%/Desktop/savefile.exe (
+goto saveDetectorName
+) else (
+goto name
+)
+:saveDetectorName
+if exist %USERPROFILE%/Desktop/savename.exe (
+set /P c=Save detected. Would you like to load it?[Y/N]
+if /I "%c%" EQU "Y" goto :saveloader
+if /T "%c%" EQU "N" goto :choice
+goto :saveDetectorName
+) else (
+goto :noName
+)
+:saveloader
+set /p save=<savefile.txt
+set /p name=<savename.txt
+goto :%save%
+:name
+set /P Player1= What is your name? 
+goto :confirmName
 
-							:choice
-							set savelevel=choice
-							@echo %savelevel% 1)adventurequest.txt
-							For /f "tokens*" %%i in (adventurequest.txt) do @echo %%i
-							set /P c=You find yourself in a sandy plains area. There is a rabbit. What would you like to do? [Search/Hunt/Specs]
-							if /I "%c%" EQU "Search" goto :Search1
-							if /I "%c%" EQU "Hunt" goto :Hunt1
-							if /I "%c%" EQU "Specs" goto :Specs1
-							goto :choice
+:confirmName
+set /P c=Your name is %Player1%, is this correct?[Y/N] 
+if /I "%c%" EQU "Y" goto :choice
+if /I "%c%" EQU "N" goto :name
+goto :confirmName
+
+:choice
+set savelevel=choice
+@echo %savelevel% 1)adventurequest.txt
+For /f "tokens*" %%i in (adventurequest.txt) do @echo %%i
+set /P c=You find yourself in a sandy plains area. There is a rabbit. What would you like to do? [Search/Hunt/Specs]
+if /I "%c%" EQU "Search" goto :Search1
+if /I "%c%" EQU "Hunt" goto :Hunt1
+if /I "%c%" EQU "Specs" goto :Specs1
+goto :choice
 					
-							:Search1
-							set /P c=You find, by wandering, a city about 12 hours away, a cactus, and the rabbit [it followed you]. What now? [City/Hunt/Specs]
-							if /I "%c%" EQU "City" goto :City1
-							if /I "%c%" EQU "Hunt" goto :Hunt1
-							if /I "%c%" EQU "Specs" goto :Specs2
-							goto :Search1
-							
-							:City1
-							pause
-							set /p c=You arive in the city as planned. you find it has been inhabited by people. What would you like to do now? [Steal/Murder/Job/Specs]
+:Search1
+set /P c=You find, by wandering, a city about 12 hours away, a cactus, and the rabbit [it followed you]. What now? [City/Hunt/Specs]
+if /I "%c%" EQU "City" goto :City1
+if /I "%c%" EQU "Hunt" goto :Hunt1
+if /I "%c%" EQU "Specs" goto :Specs2
+goto :Search1
+:City1
+pause
+set /p c=You arive in the city as planned. you find it has been inhabited by people. What would you like to do now? [Steal/Murder/Job/Specs]
 							if /I "%c%" EQU "Steal" goto :Steal1
 							if /I "%c%" EQU "Murder" goto :Murder1
 							if /I "%c%" EQU "Job" goto :Job1
