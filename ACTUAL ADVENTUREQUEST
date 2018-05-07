@@ -43,11 +43,17 @@ if /I "%c%" EQU "N" goto :name
 goto :confirmName
 :play2
 set /P c=Are you playing by yourself?
-if /I "%c%" EQU "Y" goto :player1mode
+if /I "%c%" EQU "Y" goto :1playermode
 if /I "%c%" EQU "N" goto :askplayer2
 :askplayer2
-set 
+set /P Player2= What is your name? 
+goto :confirmName2
 
+:confirmName2
+set /P c=Your name is %Player2%, is this correct?[Y/N] 
+if /I "%c%" EQU "Y" goto :2playermode
+if /I "%c%" EQU "N" goto :Askplayer2
+goto :confirmName2
 
 
 
