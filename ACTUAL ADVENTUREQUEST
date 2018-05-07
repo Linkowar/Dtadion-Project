@@ -43,9 +43,10 @@ if /I "%c%" EQU "N" goto :name
 goto :confirmName
 :play2
 set /P c=Are you playing by yourself?
-if /I "%c%" EQU "Y" goto :
-if /I "%c%" EQU "N" goto :
-
+if /I "%c%" EQU "Y" goto :player1mode
+if /I "%c%" EQU "N" goto :askplayer2
+:askplayer2
+set 
 
 
 
