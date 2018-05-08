@@ -1,5 +1,5 @@
 @echo off
-color 6f
+color 9b
 title Adventure Quest 0.0.1 ALPHA
 echo Welcome to Adventure Quest!
 echo/
@@ -46,7 +46,7 @@ set /P c=Are you playing by yourself?
 if /I "%c%" EQU "Y" goto :1playermode
 if /I "%c%" EQU "N" goto :askplayer2
 :askplayer2
-set /P Player2= What is your name? 
+set /P Player2=Player 2,What is your name? 
 goto :confirmName2
 
 :confirmName2
@@ -63,7 +63,7 @@ goto :confirmName2
 
 
 
-:choice
+:1Playermode
 set savelevel=choice
 @echo %savelevel% 1)adventurequest.txt
 For /f "tokens*" %%i in (adventurequest.txt) do @echo %%i
