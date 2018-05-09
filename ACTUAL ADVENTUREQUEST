@@ -5,7 +5,7 @@ echo Welcome to Adventure Quest!
 echo/
 echo Made by Dtad and BRL, version 0.0.1 ALPHA
 echo/
-echo This is an ALPHA build. This means that they're most likley quite a few bugs! Less than 5 percent of the game has currently been added.
+echo This is an ALPHA build. This means that they're most likley quite a few bugs! Less than 5 percent of this game has currently been added.
 pause
 goto :saveDetector
 
