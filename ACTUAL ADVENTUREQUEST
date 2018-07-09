@@ -3,11 +3,11 @@ color 3b
 title Adventure Quest 0.0.2 ALPHA
 echo Welcome to Adventure Quest!
 echo/
-echo Made by Dtad and BRL, version 0.0.1 ALPHA
+echo Made by Dtad and BRL, version 0.0.2 ALPHA
 echo/
 echo This is dedicated to; BRL, Andrew Post, Caleb Copeland, Zander Skyy Rhypkamah, Ryu Luongo, Brian Johnston, David Taylor, Angela Chrysler, and Emily Tadlock.
 echo/
-echo This is an ALPHA build. This means that they're most likley quite a few bugs! Less than 5 percent of this game has currently been added.
+echo This is an ALPHA build. This means that there are most likley quite a few bugs! Less than 5 percent of this game has currently been added.
 pause
 goto :saveDetector
 
