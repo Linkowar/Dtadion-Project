@@ -1,6 +1,6 @@
 @echo off
 color 3b
-title Adventure Quest 0.0.1 ALPHA
+title Adventure Quest 0.0.2 ALPHA
 echo Welcome to Adventure Quest!
 echo/
 echo Made by Dtad and BRL, version 0.0.1 ALPHA
