@@ -5,7 +5,7 @@ echo Welcome to Adventure Quest!
 echo/
 echo Made by Dtad and BRL, version 0.0.2 ALPHA
 echo/
-echo This is dedicated to; BRL, Andrew Post, Caleb Copeland, Zander Skyy Rhypkamah, Ryu Luongo, Brian Johnston, David Taylor, Angela Chrysler, and Emily Tadlock.
+echo This is dedicated to; BRL, Andrew Post, Caleb Copeland, Zander Skyy Rhypkamah, Ryu Luongo, Brian Johnston, David Taylor David Taylor David Taylor David Taylor David Taylor David Taylor David Taylor David Taylor David Taylor David Taylor, Angela Chrysler, and Emily Tadlock.
 echo/
 echo This is an ALPHA build. This means that there are most likley quite a few bugs! Less than 5 percent of this game has currently been added.
 pause
@@ -162,7 +162,7 @@ if /I "%c%" EQU "Specs" goto :specs7
 goto :Fakeout1
 
 :Job1
-set /p c=You break into a house for a computer. However, you trigger an alarm, and the whole neighborhood wakes up. They then start running at you with torches and pitchforks. What now? [Run/Persuade/Specs]
+set /p c=You break into a house for a computer, as stealthy as possible. However, you trigger an alarm, and the whole neighborhood wakes up. They then start running at you with torches and pitchforks. What now? [Run/Persuade/Specs]
 if /I "%c%" EQU "Run" goto :Run1
 if /I "%c%" EQU "Persuade" goto :Persuade1
 if /I "%c%" EQU "Specs" goto :Specs6
