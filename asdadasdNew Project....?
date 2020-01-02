@@ -1,11 +1,11 @@
 @echo off
 color 5f
 title Fear II
-echo Welcome to Fear II, The first Fear was a shutdown protocall.
+echo Welcome to Fear II, The first Fear -Fear I- was a shutdown protocall.
 echo/
 echo Made by Daniel Tadlock, probably with pride, because no one was willing to help.
 echo/
-echo This videogame is dedicated to: Soraya Orea, David Taylor, Andrew Post, Luke Treaster, Shyla Jackson, Aubry Penrith, AND NO ONE ELSE. 
+echo This videogame is dedicated to: Soraya Orea, Andrew Post, Luke Treaster, Shyla Jackson, Aubry Penrith, AND NO ONE ELSE. 
 echo/
 echo You are entering the dead zone. Get ready.
 pause
@@ -25,7 +25,7 @@ goto :confirmName
 set savelevel=choice
 @echo %savelevel% 1)FearII.txt
 For /f "tokens*" %i% in (FearII.txt) do @echo %%i
-set /P c=You find darkness when you awake. You notice that it hurts. Everywhere. It makes n
+set /P c=You find darkness when you awake. You notice that it hurts. Everywhere. It makes no sense, becuase you couldn't rememder what you did. Hours pass, and finally, the darkness recedes with the pain, and you can move again. What do you do? [Excamine surroundings//]
 if /I "%c%" EQU "" goto :
 if /I "%c%" EQU "" goto :
 if /I "%c%" EQU "" goto :
