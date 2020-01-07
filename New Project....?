@@ -22,10 +22,9 @@ if /I "%c%" EQU "N" goto :name
 goto :confirmName
 
 :game
-set savelevel=choice
-@echo %savelevel% 1)FearII.txt
-For /f "tokens*" %i% in (FearII.txt) do @echo %%i
-set /P c=You find darkness when you awake. You notice that it hurts. Everywhere. It makes n
+@echo %savelevel%
+For /f "*tokens*" %i%
+set /P c=You find darkness when you awake. You notice that it hurts. Everywhere. It makes no sense because
 if /I "%c%" EQU "" goto :
 if /I "%c%" EQU "" goto :
 if /I "%c%" EQU "" goto :
