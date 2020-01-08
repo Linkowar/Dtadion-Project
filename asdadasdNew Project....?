@@ -22,17 +22,16 @@ if /I "%c%" EQU "N" goto :name
 goto :confirmName
 
 :game
-set savelevel=choice
-@echo %savelevel% 1)FearII.txt
-For /f "tokens" %i% in (FearII.txt) do @echo %i%
+@echo %savelevel%
+For /f "*tokens*" %i%
 set /P c=You find darkness when you awake. You notice that it hurts. Everywhere. It makes no sense, becuase you couldn't rememder what you did. Hours pass, and finally, the darkness recedes with the pain, and you can move again. What do you do? [Examine surroundings/Check Inventory/Call Out]
 if /I "%c%" EQU "Call Out" goto :CO1
 if /I "%c%" EQU "Check Inventory" goto :CI1
 if /I "%c%" EQU "Examine Surroundings" goto :ES1
-goto :game
+goto :game2
 
 :CO1
-set /P c=
+set /P c=A person calls back to you, saying the exact same thing as you in your exact voice, and you realize it's an echo. There's no one there. What now? [Examine surroundings/Check inventory]
 if /I "%c%" EQU "" goto :
 if /I "%c%" EQU "" goto :
 if /I "%c%" EQU "" goto :
@@ -40,7 +39,7 @@ goto :CO1
 
 
 :Game2
-set /P c=You notice, as the room starts to brighten up, 
+set /P c=You notice, as the room starts to brighten up... that your eyes were closed. 
 if /I "%c%" EQU "Call Out" goto :CO1
 if /I "%c%" EQU "Examine Surroundings" goto :ES1
 goto :game
