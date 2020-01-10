@@ -5,9 +5,9 @@ echo Welcome to Fear II, The first Fear -Fear I- was a shutdown protocall.
 echo/
 echo Made by Daniel Tadlock, probably with pride, because no one was willing to help.
 echo/
-echo This videogame is dedicated to: Soraya Orea, Andrew Post, Luke Treaster, Shyla Jackson, Aubry Penrith, AND NO ONE ELSE. 
+echo This videogame is dedicated to: Soraya Orea and Andrew Post. 
 echo/
-echo You are entering the dead zone. Get ready.
+echo Get ready for your death, in one way or another. This game is like all others; starting off easy, and then getting harder and harder. ONE mistake, that's all it takes.
 pause
 goto :name
 
@@ -22,24 +22,21 @@ if /I "%c%" EQU "N" goto :name
 goto :confirmName
 
 :game
-@echo %savelevel%
-For /f "*tokens*" %i%
-set /P c=You find darkness when you awake. You notice that it hurts. Everywhere. It makes no sense, becuase you couldn't rememder what you did. Hours pass, and finally, the darkness recedes with the pain, and you can move again. What do you do? [Examine surroundings/Check Inventory/Call Out]
-if /I "%c%" EQU "Call Out" goto :CO1
-if /I "%c%" EQU "Check Inventory" goto :CI1
-if /I "%c%" EQU "Examine Surroundings" goto :ES1
+set /P c=You find darkness when you awake. You notice pain, so immense that you're paralyzed, which makes no sense, becuase you couldn't rememder what you did. Hours pass, and finally, the darkness recedes with the pain, and you can move again. What do you do? [Examine surroundings (3)/Check Inventory (2)/Call Out (1)]
+if /I "%c%" EQU "1" goto :CO1
+if /I "%c%" EQU "2" goto :Death1
+if /I "%c%" EQU "3" goto :ES1
 goto :game2
 
 :CO1
-set /P c=A person calls back to you, saying the exact same thing as you in your exact voice, and you realize it's an echo. There's no one there. What now? [Examine surroundings/Check inventory]
-if /I "%c%" EQU "" goto :
-if /I "%c%" EQU "" goto :
-if /I "%c%" EQU "" goto :
-goto :CO1
+set /P c=A person calls back to you, saying the exact same thing as you in your exact voice, and you realize there's an echo. There's no one there. What now? [Examine surroundings (1)/Check inventory (2)]
+if /I "%c%" EQU "1" goto :ES1
+if /I "%c%" EQU "2" goto :CI1
+goto :Death1
 
 
-:Game2
-set /P c=You notice, as the room starts to brighten up... that your eyes were closed. 
+:ES1
+set /P c=
 if /I "%c%" EQU "Call Out" goto :CO1
 if /I "%c%" EQU "Examine Surroundings" goto :ES1
 goto :game
@@ -50,15 +47,19 @@ pause
 goto :Game2
 
 :ES1
-set /P c=
-if /I "%c%" EQU "" goto :
-if /I "%c%" EQU "" goto :
-if /I "%c%" EQU "" goto :
+set /P c=Youu can't see too much, but the room is dark. The floor is tiled, the walls are tiled, and there are some broken and some intact lights on the celing. Do you want to look for a light switch? [Y (1)/N (2)]
+if /I "%c%" EQU "1" goto :Death1
+if /I "%c%" EQU "2" goto :Gooddecisions1
 goto :ES1
 
+:gooddecisions1
+set /p c= Good decision! If you had turned on the lights, you would have noticed in your last fleeting glimpse of life that there were rabid bats, hanging down from the ceiling, which, now that your eyes have adjusted to the darkness, which you can see now..
 
 
-
+:Death1
+set /p c=You have died. One way or another, you chose the wrong option.
+pause
+exit
 
 rem : Restore saved environment and exit batch processing.
 rem : DTADS' NOT YOURS 
