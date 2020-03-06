@@ -1,0 +1,34 @@
+@echo off
+color 
+title 
+echo 
+echo/
+echo Made by Daniel Tadlock, probably with pride, because no one was willing to help.
+echo/
+echo This videogame is dedicated to: Cherie Apollo, Soraya Orea, and Andrew Post. 
+echo/
+echo Get ready for your death, in one way or another. This game is like all others; starting off easy, and then getting harder and harder. ONE mistake, that's all it takes.
+pause
+goto :name
+
+:name
+set /P Player1= What is your name? 
+goto :confirmName
+
+:confirmName
+set /P c=Your name is %Player1%, is this correct?[Y/N] 
+if /I "%c%" EQU "Y" goto :game
+if /I "%c%" EQU "N" goto :name
+goto :confirmName
+
+:game
+set /P c=You awake in a sandy dune. There is a 
+if /I "%c%" EQU "1" goto :
+if /I "%c%" EQU "2" goto :
+if /I "%c%" EQU "3" goto :
+goto :game2
+
+
+rem : Restore saved environment and exit batch processing.
+rem : DTADS' NOT YOURS 
+endlocal
