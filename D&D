@@ -1,0 +1,31 @@
+@echo off
+color 
+title D&D
+echo Made by DTad.
+echo/
+echo  Level One -Enterance.
+echo/
+pause
+goto :name
+
+:name
+set /P Player1= What is your name? 
+goto :confirmName
+
+:confirmName
+set /P c=Your name is %Player1%, is this correct?[Y/N] 
+if /I "%c%" EQU "Y" goto :game
+if /I "%c%" EQU "N" goto :name
+goto :confirmName
+
+:game
+set /P c=You awake, and you instantly hit the ground. 
+if /I "%c%" EQU "N" goto :N1
+if /I "%c%" EQU "NE" goto :N1
+if /I "%c%" EQU "E" goto :E1
+if /I "%c%" EQU "SE" goto :N1
+if /I "%c%" EQU "S" goto :S1
+if /I "%c%" EQU "SW" goto :N1
+if /I "%c%" EQU "W" goto :W1
+if /I "%c%" EQU "NW" goto :N1
+goto :game
