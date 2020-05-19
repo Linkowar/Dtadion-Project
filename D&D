@@ -1,12 +1,9 @@
 @echo off
-color 
-title D&D
-echo Made by DTad.
+color 2F
+title Dungeons and Dragons.
+echo
 echo/
-echo  Level One -Enterance.
-echo/
-echo In D&D, you have a die called a "D20." If you would like to do anything, you have to roll the D20. If you say quickly, something bad happens. Running is permitted, but the word "quickly" just brings catastrophy. If you roll a 10 or anything under, you don't succede at that roll. If you roll a 20, the roll is perfect, and it is known as a "Crit" or a "Critical roll." Whatever you are trying to do you have just succeded at perfectly for that one roll.
-echo/
+echo
 pause
 goto :name
 
@@ -20,8 +17,9 @@ if /I "%c%" EQU "Y" goto :game
 if /I "%c%" EQU "N" goto :name
 goto :confirmName
 
+
 :game
-set /P c=You awake, and you instantly hit the ground. You appeared to be falling seconds earlier. The sun is blindingly bright, and you are standing in grass. There is no landmarks, such as trees, mountains, or houses, but there is a lone tree to the North. The sun has just risen to the South, and you are facing the tree. You can walk. Which way would you like to go? [North(N)/Northeast(NE)/East(E)/Southeast(SE)/South(S)/Southwest(SE)/West(W)/Northwest(NW)]
+set /P c=You awake, and you instantly hit the ground. You appeared to be falling seconds earlier. The sun is blindingly bright, and you are standing in grass. There is no landmarks, such as trees, mountains, or houses, except for a lone tree to the North. It is a skinny tree, not thick enough to climb. It appears that the sun has just risen to the South, and you are facing the tree. You can walk. Which way would you like to go? [North(N)/Northeast(NE)/East(E)/Southeast(SE)/South(S)/Southwest(SE)/West(W)/Northwest(NW)]
 if /I "%c%" EQU "N" goto :N1
 if /I "%c%" EQU "NE" goto :NE1
 if /I "%c%" EQU "E" goto :E1
@@ -33,28 +31,44 @@ if /I "%c%" EQU "NW" goto :NW1
 goto :game
 
 :N1
-set /P c=You have reached an elven city, where everyone welcomes you despite your race. Where would you like to go? [Tavern/Armory/
-if /I "%c%" EQU "Tavern" goto :
-if /I "%c%" EQU "" goto :
-if /I "%c%" EQU "Armory" goto :
-if /I "%c%" EQU "" goto :
-if /I "%c%" EQU "" goto :
-if /I "%c%" EQU "" goto :
-if /I "%c%" EQU "" goto :
+set /P c=You have reached an elven city, where everyone welcomes you despite your race. Where would you like to go? [Tavern/Armory/Blacksmith/Baker/Shipright/Carpenter/Grocer/Farmer/Fishmonger/Butcher/Shepherd/Tailor/Apothecary]
+if /I "%c%" EQU "Tavern" goto :Tavern1
+if /I "%c%" EQU "Blacksmith" goto :Blacksmith1
+if /I "%c%" EQU "Armory" goto :Armory1
+if /I "%c%" EQU "Baker" goto :Baker1
+if /I "%c%" EQU "Shipright" goto :Shipright1
+if /I "%c%" EQU "Carpenter" goto :Carpenter1
+if /I "%c%" EQU "Grocer" goto :Grocer1
+if /I "%c%" EQU "Farmer" goto :Farmer1
+if /I "%c%" EQU "Fishmonger" goto :Fishmonger1
+if /I "%c%" EQU "Butcher" goto :Butcher1
+if /I "%c%" EQU "Shephard" goto :Shephard1
+if /I "%c%" EQU "Apothecary" goto :Apothecary1
+if /I "%c%" EQU "Tailor" goto :Tailor1
+goto :N1
+
+:Tavern1
+Set /P c=As you enter the tavern, you notice a bartender. The room is stone dead silent, but it is filled with people. Everyone looks somber as you enter the room. What would you like to do? [Ask for a drink and then sit at a table(1)/Sit at a table(2)/Look around(3)/Sneak and...(4)]
+if /I "%c%" EQU "1" goto:Drink1
+if /I "%c%" EQU "2" goto:Sit1
+if /I "%c%" EQU "3" goto:Specs1
+goto :Tavern1
 
 
-@echo off 
-echo %DATE%
-echo %TIME%
-echo/Today is: %year%-%month%-%day% 
-goto :EOF 
-setlocal ENABLEEXTENSIONS 
-set t = 2&if "%date%z" LSS "A" set t = 1 
+:Armory1
+:Blacksmith1
+:Baker1
+:Shipright1
+:Carpenter1
+:Grocer1
+:Farmer1
+:Fishmonger1
+:Butcher1
+:Shephard1
+:Apothecary1
+:Tailor1
 
-for /f "skip=1 tokens = 2-4 delims = (-)" %%a in ('echo/^|date') do ( 
-   for /f "tokens = %t%-4 delims=.-/ " %%d in ('date/t') do ( 
-      set %%a=%%d&set %%b=%%e&set %%c=%%f)) 
-endlocal&set %1=%yy%&set %2=%mm%&set %3=%dd%&goto :EOF
+
 
 
 
