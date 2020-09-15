@@ -13,14 +13,14 @@ goto :saveDetector
 
 
 :saveDetector
-if exist %USERPROFILE%/Desktop/savefile.exe (
+if exist %USERPROFILE%/Desktop/savefile.bat (
 goto saveDetectorName
 ) else (
 goto name
 )
 
 :saveDetectorName
-if exist %USERPROFILE%/Desktop/savename.exe (
+if exist %USERPROFILE%/Desktop/savename.bat (
 set /P c=Save detected. Would you like to load it?[Y/N]
 if /I "%c%" EQU "Y" goto :saveloader
 if /T "%c%" EQU "N" goto :choice
@@ -30,8 +30,8 @@ goto :noName
 )
 
 :saveloader
-set /p save=<savefile.txt
-set /p name=<savename.txt
+set /p save=<savefile.bat
+set /p name=<savename.bat
 goto :%save%
 
 :name
@@ -55,8 +55,8 @@ goto :confirmName
 
 :1Playermode
 set savelevel=choice
-@echo %savelevel% 1)adventurequest.txt
-For /f "tokens*" %%i in (adventurequest.txt) do @echo %%i
+@echo %savelevel% 1)adventurequest.bat
+For /f "*tokens*" %i% in (adventurequest.bat) do @echo %i%
 set /P c=You find yourself in a sandy plains area. There is a rabbit. What would you like to do? [Search/Hunt/Specs]
 if /I "%c%" EQU "Search" goto :Search1
 if /I "%c%" EQU "Hunt" goto :Hunt1
