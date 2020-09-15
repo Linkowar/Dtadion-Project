@@ -1,0 +1,30 @@
+
+
+@echo off
+Color 3b
+title The Fearsome
+pause
+goto :1
+
+:1
+set /P c= Welcome to the hell that I live in. Would you like to continue? [Y/N]
+if /I "%c%" EQU "Y" goto :continue
+if /I "%c%" EQU "N" goto :exit
+Goto :1
+
+:exit
+echo Quitter.
+goto :exit (three times)
+echo Password for later: 3742. 
+exit
+
+:continue
+
+
+
+
+
+
+
+
+
