@@ -13,7 +13,7 @@ Goto :1
 :exit
 echo Quitter.
 echo/
-echo Password for later: 3742. 
+echo KzhhdLiw: 3742. 
 exit
 
 :continue
